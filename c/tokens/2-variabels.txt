@@ -11,3 +11,13 @@ We use variables to:
     - store data
     - perform operations
     - change values during runtime
+
+
+: snack_case
+my_first_name
+
+: PascalCase
+MyFirstName
+
+: camelCase
+myFirstName
