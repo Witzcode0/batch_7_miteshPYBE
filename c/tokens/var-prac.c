@@ -20,9 +20,9 @@ void main() {
     //printf("Enter num2: ");
     //scanf("%d", &num2);
 
-    printf("Enter num1 & num2 sep. by space: ");
-    scanf("%d %d", &num1, &num2);
-    printf("Num1: %d,\n Num2: %d", num1, num2);
+    // printf("Enter num1 & num2 sep. by space: ");
+    // scanf("%d %d", &num1, &num2);
+    // printf("Num1: %d,\n Num2: %d", num1, num2);
 
 
 
