@@ -1,0 +1,7 @@
+Exception handling in C++ is a structured mechanism to manage runtime errors and unexpected events, preventing program crashes and allowing for graceful recovery. It is built upon three primary keywords: try, throw, and catch. 
+
+try block: Encloses the section of code that might generate an exception. If an exception occurs within this block, execution stops, and control is transferred to a suitable exception handler.
+
+throw keyword: Used to signal that an exception (an error or unusual condition) has occurred. The operand of the throw statement determines the type of the exception, which can be a basic type (like int or const char*), a standard exception object, or a custom class object.
+
+catch block: Follows a try block and defines the code to be executed when a specific type of exception is caught. The catch statement declares an exception type in parentheses; if the type matches the thrown exception, the code inside the block is executed. 

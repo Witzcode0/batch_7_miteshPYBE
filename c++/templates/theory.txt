@@ -1,0 +1,81 @@
+a powerful feature that allow you to write generic functions and classes that work with any data type, avoiding code repetition. They are essentially a blueprint for the compiler to generate type-specific code at compile time. The Standard Template Library (STL) is built using this concept. 
+
+Why Use Templates?
+    - Code Reusability: Write a single function or class definition that can be used with multiple data types.
+    - Type Safety: Unlike macros or void* pointers, the compiler performs type checking with templates, leading to safer code.
+    - Performance: Templates are expanded at compile time, which can lead to optimized code that is just as fast as non-template functions written for specific types.
+    - Generic Programming: They are the foundation of generic programming, enabling the creation of universal data structures (like vector, list, stack) and algorithms (like sort, max, min). 
+
+Types of Templates
+
+There are two main types of templates in C++:
+----------------------------------------------------------------------------------------------------------
+1. Function Templates
+A function template defines a family of functions that can operate on different data types with the same logic. 
+
+syntax: 
+
+template <typename T>
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+Example : 
+
+#include <iostream>
+
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    std::cout << "Sum of 5 and 3: " << add<int>(5, 3) << std::endl;
+    std::cout << "Sum of 5.5 and 3.3: " << add<double>(5.5, 3.3) << std::endl;
+    // The compiler can also automatically deduce the type:
+    std::cout << "Sum of 7 and 10: " << add(7, 10) << std::endl;
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------
+2. Class Templates
+A class template defines a family of classes, allowing the structure and behavior of a class to be generic across different data types. This is especially useful for container classes. 
+
+syntax:
+
+template <class T>
+class Container {
+public:
+    T item;
+    Container(T x) : item(x) {}
+    void show() {
+        std::cout << "Item: " << item << std::endl;
+    }
+};
+
+
+Example :
+
+#include <iostream>
+#include <string>
+
+template <class T>
+class Box {
+public:
+    T value;
+    Box(T v) {
+        value = v;
+    }
+    void show() {
+        std::cout << "Value: " << value << std::endl;
+    }
+};
+
+int main() {
+    Box<int> intBox(50);
+    Box<std::string> strBox("Hello Templates");
+    intBox.show();
+    strBox.show();
+
+    return 0;
+}
